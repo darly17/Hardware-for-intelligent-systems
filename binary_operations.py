@@ -4,6 +4,7 @@ from binary_translator import *
 class Binary_operation:
     ACCURACY=5
     MANTISSA_LENGTH = 23
+    EXPONENTA=8
     dec_translator = Translator_to_decimal()
     translator = Binary_translator()
     
@@ -97,8 +98,8 @@ class Binary_operation:
     def sum_float_binary(self,value1, value2):
         value1= self.translator.decimal_to_binary_float(value1)
         value2= self.translator.decimal_to_binary_float(value2)
-        sign1, exp1, mant1 = value1[0], value1[1:9], value1[9:]
-        sign2, exp2, mant2 = value2[0], value2[1:9], value2[9:]
+        sign1, exp1, mant1 = value1[0], value1[1:self.EXPONENTA+1], value1[self.EXPONENTA+1:]
+        sign2, exp2, mant2 = value2[0], value2[1:self.EXPONENTA+1], value2[self.EXPONENTA+1:]
         exp1_int = int(exp1, 2)
         exp2_int = int(exp2, 2)
         result_mant=''
