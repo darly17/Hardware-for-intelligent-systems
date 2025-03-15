@@ -150,8 +150,14 @@ class Logic_operator:
         sdnf_value_form.pop()
         sdnf_value_form.append(")")
         sdnf_value_form.append("|")
-        print(str(sdnf_value_form))
-        return str(sdnf)
+        sdnf_str=''
+        sdnf_value_form_str=''
+        for i in range(0,len(sdnf),1):
+            sdnf_str+=sdnf[i]
+        for i in range(0,len(sdnf_value_form),1):
+            sdnf_value_form_str+=sdnf_value_form[i]
+        print(str(sdnf_value_form_str))
+        return str(sdnf_str)
          
    
     def build_sknf(self):
@@ -174,8 +180,14 @@ class Logic_operator:
         sknf_value_form.pop()
         sknf_value_form.append(")")
         sknf_value_form.append("&")
-        print(str(sknf_value_form))   
-        return str(sknf)
+        sknf_str=''
+        sknf_value_form_str=''
+        for i in range(0,len(sknf),1):
+            sknf_str+=sknf[i]
+        for i in range(0,len(sknf_value_form),1):
+            sknf_value_form_str+=sknf_value_form[i]
+        print(str(sknf_value_form_str))
+        return str(sknf_str)
         
     def binary_to_decimal(self,value):
         result =0
