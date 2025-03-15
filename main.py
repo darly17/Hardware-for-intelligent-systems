@@ -9,7 +9,7 @@ class Logic_operator:
             if (i not in self.operations) & (i not in self.letters_list)&(i in self.alphabet):
                 self.letters_list.append(i)
         self.table = []
-        #заполняем нулями, пример: [a, 0,0,0,0,0]
+    
         for i in range(0,len(self.letters_list),1):
             self.table.append([0]*(pow(2,len(self.letters_list))+1))
             self.table[i][0]=self.letters_list[i]
@@ -19,12 +19,9 @@ class Logic_operator:
 
         for i in range(0,pow(2,len(self.letters_list)),1):
             binarry_value=self.get_binary(i,len(self.letters_list))
-            #print(binarry_value)
             for j in range(0,len(self.letters_list),1):
                 self.table[j][i+1]=binarry_value[j]
-        print(self.table)
 
-        #create OPZ
         self.turn_into_opz()
         print(f"OPZ:{self.opz_str}")
         #table of all
