@@ -18,11 +18,11 @@ class Formater():
         return result_direct_binary
     
     def show_table(self):
-        # Выводим заголовки столбцов
+        
         header = " ".join([row[0].ljust(3) for row in self.table])
         print(header)
         
-        # Выводим строки с данными
+        
         for i in range(1, len(self.table[0])):
             row_data = []
             for j in range(len(self.table)):
